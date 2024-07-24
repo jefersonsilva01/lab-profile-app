@@ -1,0 +1,42 @@
+#home-page h2 {
+  color: rgb(52, 136, 52);
+  display: inline-block;
+  position: relative;
+  left: 15%;
+  top: 200px;
+  font-size: 2em;
+}
+
+#home-page p {
+  position: relative;
+  left: 15%;
+  top: 200px;
+  font-size: 1.8em;
+  margin-top: 16px;
+  width: 500px;
+  font-weight: 300;
+  line-height: 35px;
+  color: grey;
+}
+
+#home-page a {
+  position: relative;
+  left: 15%;
+  top: 400px;
+  margin-top: 16px;
+  display: block;
+  text-align: center;
+  width: 300px;
+  text-decoration: none;
+  font-size: 1.2em;
+  background-color: rgb(180, 233, 180);
+  padding: 12px 0;
+  color: rgb(32, 27, 27);
+  font-weight: 500;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+#home-page a:hover {
+  background-color: rgb(108, 180, 108);
+}

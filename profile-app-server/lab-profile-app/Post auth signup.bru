@@ -1,0 +1,18 @@
+meta {
+  name: Post auth signup
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:5005/auth/signup
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  username: jef
+  password: 1234
+  campus: Sao Paulo
+  course: Web Dev
+}
