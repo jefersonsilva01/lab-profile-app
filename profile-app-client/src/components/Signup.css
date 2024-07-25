@@ -1,0 +1,73 @@
+form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80%;
+}
+
+#signup-input {
+  display: flex;
+  flex-direction: column;
+}
+
+#signup-input h2 {
+  font-size: 2.3em;
+  color: rgb(52, 136, 52);
+  margin-bottom: 64px;
+}
+
+#signup-input label {
+  margin: 32px 0 8px;
+  font-size: 1.3em;
+  font-weight: 300;
+  color: grey;
+}
+
+#signup-input input,
+#signup-input select {
+  background-color: rgb(240, 231, 231);
+  border: none;
+  height: 44px;
+  width: 400px;
+}
+
+#signup-hero {
+  height: 100%;
+}
+
+#signup-hero h2 {
+  font-size: 1.6em;
+  margin-top: 180px;
+  font-weight: 500;
+}
+
+#signup-hero p:first-of-type {
+  margin: 16px 0 250px;
+  font-size: 2em;
+  font-weight: 300;
+  color: grey;
+}
+
+#signup-hero p:nth-child(3) {
+  color: grey;
+  font-size: 1.1em;
+  line-height: 25px;
+  letter-spacing: 1.5px;
+  margin-top: 16px;
+}
+
+#signup-hero button {
+  height: 44px;
+  width: 300px;
+  border-radius: 4px;
+  border: none;
+  font-size: 1.3em;
+  margin: 24px 0 0 16px;
+  background-color: white;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#signup-hero button:hover {
+  background-color: rgb(235, 227, 227);
+}
