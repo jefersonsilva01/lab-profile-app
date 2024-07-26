@@ -25,10 +25,18 @@ form {
 
 #signup-input input,
 #signup-input select {
+  font-size: 1.2em;
+  padding: 0 16px;
   background-color: rgb(240, 231, 231);
   border: none;
   height: 44px;
   width: 400px;
+  transition: 0.3s ease-in-out;
+}
+
+#signup-input input:focus,
+#signup-input select:focus {
+  background-color: white;
 }
 
 #signup-hero {
