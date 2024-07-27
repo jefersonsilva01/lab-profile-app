@@ -38,6 +38,11 @@ class AuthService {
     return this.service.post('/auth/upload', image)
       .then(response => response.data)
   }
+
+  logout = () => {
+    return this.service.post('/auth/logout', {})
+      .then(response => response.data)
+  }
 }
 
 export default AuthService;

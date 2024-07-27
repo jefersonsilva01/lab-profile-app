@@ -29,6 +29,14 @@ class Profile extends Component {
       .catch(error => console.log(error))
   }
 
+  logout = () => {
+    this.service.logout()
+      .then(() => {
+        this.setState({ profileUser: null });
+        this.props.getUser(null);
+      })
+  }
+
   handleChange = e => {
     const uploadImage = new FormData();
 
@@ -64,7 +72,7 @@ class Profile extends Component {
             <label>Course</label>
             <p>{this.state.profileUser.course}</p>
 
-            <button id="btn-logout">Logout</button>
+            <button onClick={this.logout} id="btn-logout">Logout</button>
           </div>
 
           <div id="profile-image">

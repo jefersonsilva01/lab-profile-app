@@ -119,4 +119,9 @@ router.post("/auth/upload", uploader.single("image"), (req, res, next) => {
   res.json({ secure_url: req.file.path });
 });
 
+router.post("/auth/logout", (req, res, next) => {
+  req.logout(err => { if (err) return next(err) });
+  res.status(200).json({ message: 'Log out succes!' });
+});
+
 module.exports = router;
