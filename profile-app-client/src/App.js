@@ -6,6 +6,8 @@ import HomePage from './components/HomePage';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import AuthService from './components/auth/auth-service';
+import Profile from './components/Profile';
+import ProtectedRoute from './components/auth/protected-route';
 
 class App extends Component {
   constructor(props) {
@@ -41,8 +43,11 @@ class App extends Component {
     if (this.state.loggedInUser) {
       return (
         <div className="App" >
-          <Switch>
-          </Switch>
+          <ProtectedRoute
+            user={this.state.loggedInUser}
+            component={Profile}
+            getUser={this.getTheUser}
+          />
         </div>
       );
     } else {
@@ -51,9 +56,7 @@ class App extends Component {
           <Switch>
             <Route
               exact path="/"
-              render={() => <HomePage
-                userInSession={this.state.loggedInUser}
-                getUser={this.getTheUser} />} />
+              component={HomePage} />
 
             <Route
               exact path="/login"

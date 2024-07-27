@@ -80,7 +80,10 @@ class Login extends Component {
               do whatever we want with the data!
             </p>
 
-            <button type="submit">Log in</button>
+            <button
+              type="submit">
+              Log in
+            </button>
           </div>
         </form>
       </div>

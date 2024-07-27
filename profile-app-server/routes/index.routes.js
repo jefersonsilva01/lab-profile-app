@@ -4,10 +4,6 @@ const uploader = require('../config/cloudinary.config');
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
 
-router.get("/", (req, res, next) => {
-  res.json("All good in here");
-});
-
 router.post("/auth/signup", (req, res, next) => {
   const { username, password, campus, course } = req.body;
 
@@ -97,14 +93,24 @@ router.get("/auth/verify", (req, res, next) => {
 
 router.put("/api/users", (req, res, next) => {
   const { image } = req.body;
-  res.json("Updated user object");
+  const { id } = req.query
+
+  console.log(image, id);
+
+  User.findByIdAndUpdate(id, { $set: { image: image } })
+    .then(response => res.json(response))
+    .catch(error => res.json(error));
 });
 
 router.get("/api/users", (req, res, next) => {
-  res.json("Current user object");
+  const { id } = req.query;
+
+  User.findById({ _id: id })
+    .then(user => res.json(user))
+    .catch(err => res.json(err));
 });
 
-router.post("/auth/upload", uploader.single("imageUrl"), (req, res, next) => {
+router.post("/auth/upload", uploader.single("image"), (req, res, next) => {
   if (!req.file) {
     next(new Error('No file uploaded!'));
     return;

@@ -4,7 +4,7 @@ class AuthService {
   constructor() {
     let service = axios.create({
       baseURL: 'http://localhost:5005',
-      // withCredentials: true
+      withCredentials: true
     });
     this.service = service;
   }
@@ -21,6 +21,21 @@ class AuthService {
 
   verify = () => {
     return this.service.get('/auth/verify')
+      .then(response => response.data)
+  }
+
+  user = (id) => {
+    return this.service.get(`/api/users?id=${id}`)
+      .then(response => response.data)
+  }
+
+  userUpdate = (id, image) => {
+    return this.service.put(`/api/users?id=${id}`, { image })
+      .then(response => response.data)
+  }
+
+  uploadImage = (image) => {
+    return this.service.post('/auth/upload', image)
       .then(response => response.data)
   }
 }
